@@ -1,0 +1,90 @@
+<div class="p-5">
+  <form role="form" [formGroup]="form" (ngSubmit)="onFormSubmit()">
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <label for="name" class="field-label">ID</label>
+          <input class="form-control" formControlName="idOrden" type="number" />
+          <app-field-error-display
+            [displayError]="isFieldValid('idOrden')"
+            errorMsg=" Digite el id"
+          >
+          </app-field-error-display>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Cliente</label>
+          <select class="form-select" formControlName="idCliente">
+            <ng-container *ngIf="clients$ | async as clients">
+              <option *ngFor="let item of clients" [value]="item.id">{{ item.nombre | capitalizado }} {{ item.apellidos | capitalizado }}</option>
+            </ng-container>
+          </select>
+          <app-field-error-display
+            [displayError]="isFieldValid('idCliente')"
+            errorMsg=" Seleccione un Cliente"
+          >
+          </app-field-error-display>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Producto</label>
+          <select class="form-select" formControlName="idProducto">
+            <ng-container *ngIf="products$ | async as products">
+              <option *ngFor="let item of products" [value]="item.id">{{ item.nombre | capitalizado }}</option>
+            </ng-container>
+          </select>
+          <app-field-error-display
+            [displayError]="isFieldValid('idProducto')"
+            errorMsg=" Seleccione un Producto"
+          >
+          </app-field-error-display>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Cantidad</label>
+          <input
+            class="form-control"
+            formControlName="cantidad"
+            type="number"
+          />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Fecha</label>
+          <input
+            class="form-control"
+            formControlName="fecha"
+            type="date"
+          />
+        </div>
+      </div>
+    </div>
+    <hr class="my-3" />
+    <div class="row">
+      <div class="col-12">
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          routerLink="/ordenes"
+        >
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="form.pristine || form.invalid"
+        >
+          Guardar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

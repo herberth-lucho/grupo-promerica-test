@@ -1,0 +1,86 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "maria",
+      "apellidos": "Guardado"
+    },
+    {
+      "id": 2,
+      "nombre": "roberto",
+      "apellidos": "zelaya",
+      "telefonos": "2365-9874",
+      "correo": "email@fake.com",
+      "nit": "123123132"
+    },
+    {
+      "id": 3,
+      "nombre": "jose",
+      "apellidos": "perez",
+      "telefono": "5698-7456",
+      "correo": "email@fake.com",
+      "nit": "0856-121089-105-3"
+    },
+    {
+      "id": 4,
+      "nombre": "alberto",
+      "apellidos": "correa",
+      "telefono": null,
+      "correo": null,
+      "nit": "3659-523687-111-1"
+    },
+    {
+      "id": 5,
+      "nombre": "jose maria",
+      "apellidos": "ascencio perez",
+      "telefono": null,
+      "correo": null,
+      "nit": null
+    },
+    {
+      "id": 6,
+      "nombre": "manuel",
+      "apellidos": "moreno hernandez",
+      "telefono": null,
+      "correo": null,
+      "nit": null
+    }
+  ],
+  "ordenes": [
+    {
+      "idProducto": "1",
+      "idCliente": "1",
+      "id": "1",
+      "cantidad": "1",
+      "fecha": "2022-03-17"
+    },
+    {
+      "id": 2,
+      "idProducto": "2",
+      "idCliente": "2",
+      "cantidad": 3,
+      "fecha": "2022-03-17"
+    },
+    {
+      "id": 3,
+      "idProducto": "2",
+      "idCliente": "4",
+      "cantidad": 3,
+      "fecha": "2022-03-17"
+    }
+  ],
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Debora",
+      "descripcion": "Guardado",
+      "precio": "10"
+    },
+    {
+      "id": 2,
+      "nombre": "producto 2",
+      "descripcion": "producto 2 descripcion",
+      "precio": 4.99
+    }
+  ]
+}

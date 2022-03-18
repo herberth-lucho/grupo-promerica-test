@@ -1,0 +1,18 @@
+<div class="p-5">
+  <a class="btn btn-primary mb-3" [routerLink]="['/productos']">Regresar</a>
+
+  <ng-container *ngIf="product$ | async as product">
+    <div class="card" style="width: 18rem">
+      <img src="https://via.placeholder.com/100" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.nombre }}</h5>
+        <p class="card-text">
+          ${{ product.precio }}
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ product.descripcion }}</li>
+      </ul>
+    </div>
+  </ng-container>
+</div>

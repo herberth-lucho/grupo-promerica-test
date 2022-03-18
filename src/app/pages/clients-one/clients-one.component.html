@@ -1,0 +1,21 @@
+<div class="p-5">
+  <a class="btn btn-primary mb-3" [routerLink]="['/clientes']">Regresar</a>
+
+  <ng-container *ngIf="client$ | async as client">
+    <div class="card" style="width: 18rem">
+      <img src="https://via.placeholder.com/100" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ client.nombre }}</h5>
+        <p class="card-text">
+          {{ client.apellidos }}
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: {{ client.id }}</li>
+        <li class="list-group-item">NIT: {{ client.nit }}</li>
+        <li class="list-group-item">Teléfono: {{ client.telefonos }}</li>
+        <li class="list-group-item">Correo: {{ client.correo }}</li>
+      </ul>
+    </div>
+  </ng-container>
+</div>

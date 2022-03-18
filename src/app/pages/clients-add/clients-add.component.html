@@ -1,0 +1,97 @@
+<div class="p-5">
+  <form role="form" [formGroup]="form" (ngSubmit)="onFormSubmit()">
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <label for="name" class="field-label">ID</label>
+          <input class="form-control" formControlName="id" type="number" />
+          <app-field-error-display
+            [displayError]="isFieldValid('id')"
+            errorMsg=" Digite el id"
+          >
+          </app-field-error-display>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">NIT</label>
+          <input class="form-control" formControlName="nit" type="text" placeholder="xxxx-xxxxxx-xxx-x" />
+          <app-field-error-display
+            [displayError]="isFieldValid('nit')"
+            errorMsg=" Digite un NIT válido"
+          >
+          </app-field-error-display>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Nombres</label>
+          <input
+            class="form-control"
+            formControlName="nombre"
+            type="text"
+            placeholder="Digite su nombre"
+          />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Apellidos</label>
+          <input
+            class="form-control"
+            formControlName="apellidos"
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Teléfono</label>
+          <input
+            class="form-control"
+            formControlName="telefono"
+            type="text"
+            placeholder="xxxx-xxxx"
+          />
+          <app-field-error-display
+            [displayError]="isFieldValid('telefono')"
+            errorMsg=" Digite un teléfono válido"
+          >
+          </app-field-error-display>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Correo</label>
+          <input
+            class="form-control"
+            formControlName="correo"
+            type="email"
+          />
+          <app-field-error-display
+            [displayError]="isFieldValid('correo')"
+            errorMsg=" Digite un correo válido"
+          >
+          </app-field-error-display>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3" />
+    <div class="row">
+      <div class="col-12">
+        <button type="button" class="btn btn-outline-primary" routerLink="/clientes">Cancelar</button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="form.pristine || form.invalid"
+        >
+          Guardar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="p-5">
+  <h1 class="text-primary my-4">Productos</h1>
+  <a class="btn btn-primary" [routerLink]="['agregar']">Agregar</a>
+
+  <table class="table table-hover mt-3">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="products$ | async as products">
+        <tr *ngFor="let item of products" [routerLink]="['mostrar', item.id]" role="button">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.descripcion }}</td>
+          <td>${{ item.precio }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

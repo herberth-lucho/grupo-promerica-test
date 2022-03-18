@@ -1,0 +1,66 @@
+<div class="p-5">
+  <form role="form" [formGroup]="form" (ngSubmit)="onFormSubmit()">
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group">
+          <label for="name" class="field-label">ID</label>
+          <input class="form-control" formControlName="id" type="number" />
+          <app-field-error-display
+            [displayError]="isFieldValid('id')"
+            errorMsg=" Digite el id"
+          >
+          </app-field-error-display>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Nombre</label>
+          <input
+            class="form-control"
+            formControlName="nombre"
+            type="text"
+            placeholder="Digite su nombre"
+          />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="name" class="field-label">Precio</label>
+          <input
+            class="form-control"
+            formControlName="precio"
+            type="number"
+          />
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="descripcion" class="field-label">Descripcion</label>
+          <input
+            class="form-control"
+            formControlName="descripcion"
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <hr class="my-3" />
+    <div class="row">
+      <div class="col-12">
+        <button type="button" class="btn btn-outline-primary" routerLink="/productos">Cancelar</button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="form.pristine || form.invalid"
+        >
+          Guardar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

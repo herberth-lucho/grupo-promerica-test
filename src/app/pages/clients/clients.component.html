@@ -1,0 +1,29 @@
+<div class="p-5">
+  <h1 class="text-primary my-4">Clientes</h1>
+  <a class="btn btn-primary" [routerLink]="['agregar']">Agregar</a>
+
+  <table class="table table-hover mt-3">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Correo</th>
+        <th scope="col">NIT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="clients$ | async as clients">
+        <tr *ngFor="let item of clients" [routerLink]="['mostrar', item.id]" role="button">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.nombre | capitalizado }}</td>
+          <td>{{ item.apellidos | capitalizado }}</td>
+          <td>{{ item.telefono }}</td>
+          <td>{{ item.correo }}</td>
+          <td>{{ item.nit }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
